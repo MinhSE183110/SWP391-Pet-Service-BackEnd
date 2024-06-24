@@ -29,7 +29,9 @@ connectDB();
 // Middleware
 var corsOptions = {
   origin: 'http://localhost:5173',
-  optionsSuccessStatus: 200 
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS', 'HEAD', 'PATCH'], // Add all methods you want to allow
+  allowedHeaders: '*', // Allow all headers
+  credentials: true // Enable credentials
 }
 app.use(cors(corsOptions));
 
